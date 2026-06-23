@@ -4,7 +4,7 @@ A faithful recreation of the **Chrome offline T-Rex Runner** — the game that a
 when your browser loses its connection. Single HTML file, vanilla JavaScript, an HTML5
 canvas, and zero dependencies. It works completely offline (fitting).
 
-**▶️ Play it:** https://dino-game-rose-ten.vercel.app
+**▶️ Play it:** https://dino-go.vercel.app
 
 ## Controls
 
