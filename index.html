@@ -241,14 +241,8 @@
       if (g.x < -4) g.x = W + Math.random() * 30;
     }
 
-    // day/night flip every ~700 score
-    const wantNight = Math.floor(score / 700) % 2 === 1;
-    if (wantNight !== night) {
-      night = wantNight;
-      document.body.classList.toggle("night", night);
-      nightFlash = 12;
-    }
-    if (nightFlash > 0) nightFlash--;
+    // Day/night flip disabled — this game stays in light mode only.
+    // (`night` is left false so all draw paths use the light palette.)
 
     // collisions
     const hb = hitbox();
