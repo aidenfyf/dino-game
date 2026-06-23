@@ -81,9 +81,9 @@
   const GROUND_Y = 180;          // top of the ground line
   const GRAVITY = 0.78;
   const JUMP_V = -13.2;
-  const START_SPEED = 6;
-  const MAX_SPEED = 14;
-  const SPEED_RAMP = 0.0012;
+  const START_SPEED = 4.5;
+  const MAX_SPEED = 11;
+  const SPEED_RAMP = 0.0007;
 
   // ---- color helper (reads CSS var so day/night just works) ----
   const fg = () => getComputedStyle(document.body).getPropertyValue("--fg").trim() || "#535353";
@@ -219,7 +219,8 @@
     dino.vy += GRAVITY;
     dino.y += dino.vy;
     if (dino.y >= GROUND_Y) { dino.y = GROUND_Y; dino.vy = 0; dino.onGround = true; }
-    if (frame % 6 === 0) dino.legFrame ^= 1;
+    const legInterval = Math.max(4, Math.round(36 / speed));
+    if (frame % legInterval === 0) dino.legFrame ^= 1;
 
     // spawn
     if (--nextObstacleIn <= 0) spawnObstacle();
